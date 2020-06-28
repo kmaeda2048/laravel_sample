@@ -8,8 +8,8 @@ use Illuminate\Support\Str;
 
 $factory->define(Task::class, function (Faker $faker) {
     return [
-        'title' => Str::random(5),
-        'body' => Str::random(10),
+        'title' => Str::random(20),
+        'body' => Str::random(80),
         // 'title' => $faker->title,
         // 'body' => $faker->paragraph,
         // 'user_id' => factory(App\User::class),

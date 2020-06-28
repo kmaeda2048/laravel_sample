@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // // 1対1
+    // public function task()
+    // {
+    //     return $this->hasOne('App\Task');
+    // }
+
+    // 1対多
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
 }

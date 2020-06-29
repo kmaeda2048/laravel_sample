@@ -20,17 +20,17 @@ class UserSeeder extends Seeder
         //     'password' => Hash::make('password')
         // ]);
 
-        factory(App\User::class, 50)->create(); // database/factories/UserFactory.php？を使って50件作成
+        // factory(App\User::class, 50)->create(); // database/factories/UserFactory.php？を使って50件作成
         // factory(App\User::class, 50)->create([ // database/factories/UserFactory.php？を使って値を上書きして50件作成
         //     'name' => 'foo',
         //     'email_verified_at' => null
         // ]);
 
-        // factory(App\User::class, 50)->create()->each(function ($user) { // 50件のレコード
-        //     $user->posts()->save(factory(App\Post::class)->make());
-        //     $user->posts()->createMany(
-        //         factory(App\Post::class, 50)->make()->toArray()
-        //     );
-        // });
+        factory(App\User::class, 50)->create()->each(function ($user) { // Userを50件作成
+            // $user->tasks()->save(factory(App\Task::class)->make()); // Taskを1件作成
+            $user->tasks()->createMany(
+                factory(App\Task::class, 50)->make()->toArray() // Taskを50件作成
+            );
+        });
     }
 }

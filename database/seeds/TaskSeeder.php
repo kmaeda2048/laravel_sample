@@ -11,6 +11,6 @@ class TaskSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Task::class, 50)->create(); // database/factories/TaskFactory.php？を使って50件作成
+        // factory(App\Task::class, 50)->create(); // database/factories/TaskFactory.php？を使って50件作成
     }
 }
